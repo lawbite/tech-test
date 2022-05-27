@@ -1,0 +1,14 @@
+<h1>Companies</h1>
+
+<table id="companies">
+  <thead>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
