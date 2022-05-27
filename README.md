@@ -75,6 +75,7 @@ NOTE you don't need to write the full mailer, just a stub object that prints a
 message to the console is fine.
 
 ## Tips
+* Styling / layout is unimportant for this tech test.
 * Write tests!
 * Tackle one feature at a time. It's better to have one fully working feature
   than all the features partially complete.
