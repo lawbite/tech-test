@@ -68,9 +68,11 @@ The tech test is to add the functionality to associate lawyers with a company.
 * And I check the check box next to "Lawyer 1"
 * When I click "Save"
 * Then "Lawyer 1" should receive an email that they've been added to a new
-  company
-(NOTE If the lawyer is already on the team they should not receive an email
-when the form is saved)
+  company  
+NOTE If the lawyer is already on the team they should not receive an email
+when the form is saved.  
+NOTE you don't need to write the full mailer, just a stub object that prints a
+message to the console is fine.
 
 ## Tips
 * Write tests!
