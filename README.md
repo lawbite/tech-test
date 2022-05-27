@@ -61,8 +61,20 @@ The tech test is to add the functionality to associate lawyers with a company.
 * When I click "Save"
 * Then I should see the validation error "Maximum number of lawyers reached"
 
+### Associating a new lawyer with a company sends an email
+* Given there is a lawyer with the name "Lawyer 1"
+* And I'm on the company show page for "Company 1"
+* And I click "Manage Lawyers"
+* And I check the check box next to "Lawyer 1"
+* When I click "Save"
+* Then "Lawyer 1" should receive an email that they've been added to a new
+  company
+(NOTE If the lawyer is already on the team they should not receive an email
+when the form is saved)
+
 ## Tips
 * Write tests!
 * Tackle one feature at a time. It's better to have one fully working feature
   than all the features partially complete.
 * Write good commit messages.
+* No call backs
