@@ -1,0 +1,16 @@
+<h1>Lawyers</h1>
+
+<table id="lawyers">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <% lawyers.each do |lawyer| %>
+      <tr>
+        <td><%= lawyer.name %></td>
+        <td><%= lawyer.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
