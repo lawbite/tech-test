@@ -6,6 +6,7 @@
 * Run `bin/setup`
 * You can run the exisiting tests with `bin/rspec`
 * Push up your commits to your branch as you go (feel free to force push)
+* When you're done open a PR against the main branch
 
 ## Instructions
 This is a simple app with two models `Lawyer` and `Company`.
