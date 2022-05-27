@@ -77,4 +77,6 @@ when the form is saved)
 * Tackle one feature at a time. It's better to have one fully working feature
   than all the features partially complete.
 * Write good commit messages.
-* No call backs
+* **No call backs**
+* Keep logic out of controllers
+* Think about resources (Rails resources, not performance)
