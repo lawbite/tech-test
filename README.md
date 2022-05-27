@@ -56,3 +56,9 @@ The tech test is to add the functionality to associate lawyers with a company.
 * And I check the check box next to "Lawyer 3"
 * When I click "Save"
 * Then I should see the validation error "Maximum number of lawyers reached"
+
+## Tips
+* Write tests!
+* Tackle one feature at a time. It's better to have one fully working feature
+  than all the features partially complete.
+* Write good commit messages.
