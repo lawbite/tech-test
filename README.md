@@ -52,5 +52,7 @@ The tech test is to add the functionality to associate lawyers with a company.
 * And "Lawyer 1" is associated with "Company 1"
 * And "Lawyer 2" is associated with "Company 1"
 * And I'm on the company show page for "Company 1"
-* When I click "Manage Lawyers"
+* And I click "Manage Lawyers"
+* And I check the check box next to "Lawyer 3"
+* When I click "Save"
 * Then I should see the validation error "Maximum number of lawyers reached"
