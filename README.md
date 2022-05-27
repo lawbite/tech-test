@@ -1,7 +1,11 @@
 # README
 
 ## Getting started
-Run `bin/setup`
+* Clone this repo
+* Check out a branch for your tech test
+* Run `bin/setup`
+* You can run the exisiting tests with `bin/rspec`
+* Push up your commits to your branch as you go (feel free to force push)
 
 ## Instructions
 This is a simple app with two models `Lawyer` and `Company`.
