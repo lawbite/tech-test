@@ -14,7 +14,7 @@ company.
 This link doesn't go anywhere.
 The tech test is to add the functionality to associate lawyers with a company.
 
-[example.png](https://github.com/lawbite/tech-test/raw/main/public/example.png)
+![example.png](https://github.com/lawbite/tech-test/raw/main/public/example.png)
 
 ## Feature requirements
 
