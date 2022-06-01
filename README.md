@@ -77,6 +77,12 @@ when the form is saved.
 NOTE you don't need to write the full mailer, just a stub object that prints a
 message to the console is fine.
 
+### Editing the company name
+* Given I'm on the company page for "Company 1"
+* When I click the title "Company 1"
+* Then I should see a form to update the company name
+* And I should not see any lawyer names
+
 ## Tips
 * Styling / layout is unimportant for this tech test.
 * Write tests!
