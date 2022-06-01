@@ -86,3 +86,5 @@ message to the console is fine.
 * **No call backs**
 * Keep logic out of controllers
 * Think about resources (Rails resources, not performance)
+* The app should support removing a lawyer from one company and assigning them
+  to another company
