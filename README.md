@@ -83,7 +83,7 @@ message to the console is fine.
 
 ## Tips
 * Styling / layout is unimportant for this tech test.
-* Write tests!
+* TDD
 * Tackle one feature at a time. It's better to have one fully working feature
   than all the features partially complete.
 * Write good commit messages / have a good git history
