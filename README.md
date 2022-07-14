@@ -5,8 +5,6 @@
 * Check out a branch for your tech test
 * Run `bin/setup`
 * You can run the exisiting tests with `bin/rspec`
-* Push up your commits to your branch as you go (feel free to force push)
-* When you're done open a PR against the main branch
 
 ## Instructions
 This is a simple app with two models `Lawyer` and `Company`.
@@ -88,7 +86,7 @@ message to the console is fine.
 * Write tests!
 * Tackle one feature at a time. It's better to have one fully working feature
   than all the features partially complete.
-* Write good commit messages.
+* Write good commit messages / have a good git history
 * **No call backs**
 * Keep logic out of controllers
 * Think about resources (Rails resources, not performance)
