@@ -12,8 +12,16 @@ FileUtils.chdir APP_ROOT do
   # This script is a way to set up or update your development environment automatically.
   # This script is idempotent, so that you can run it at any time and get an expectable outcome.
   # Add necessary setup steps to this file.
+  puts "== check for database.yml =="
+  if File.exists?("config/database.yml")
+    puts "\n** creating database.yml already exists! **"
+    puts "** manually execute `cp config/database.yml.example config/database.yml` to reset to default **"
+  else
+    puts "\n== creating database.yml from database.yml.example =="
+    system! "cp config/database.yml.example config/database.yml"
+  end
 
-  puts "== Installing dependencies =="
+  puts "\n== Installing dependencies =="
   system! "gem install bundler --conservative"
   system("bundle check") || system!("bundle install")
 
