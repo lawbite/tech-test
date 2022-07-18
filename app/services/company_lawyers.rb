@@ -9,4 +9,8 @@ class CompanyLawyers
   def save
     company.update(lawyer_ids: lawyer_ids)
   end
+
+  def errors
+    company.errors.full_messages
+  end
 end
