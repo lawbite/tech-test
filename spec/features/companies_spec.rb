@@ -36,4 +36,25 @@ RSpec.describe "Companies", type: :feature do
       end
     end
   end
+
+  describe "lawyer association for the company" do
+    it "allow lawyers to be associated with the company" do
+      FactoryBot.create(
+        :lawyer,
+        name: "Lawyer 1",
+        email: "lawyer_1@example.com",
+      )
+      company = FactoryBot.create(:company, name: "Company 1")
+
+      visit company_path(company)
+
+      click_link "Manage Lawyers"
+      check "Lawyer 1"
+      click_button "Save"
+
+      within "li.associatedLawyer" do
+        expect(page).to have_content "Lawyer 1"
+      end
+    end
+  end
 end
