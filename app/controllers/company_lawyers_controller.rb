@@ -9,12 +9,7 @@ class CompanyLawyersController < ApplicationController
   def update
     company_lawyers = CompanyLawyers.new(params[:company_id], params[:company][:lawyer_ids])
     company_lawyers.save
+
     redirect_to company_path(company_lawyers.company)
-  end
-
-  private
-
-  def company_params
-    params.require(:company).permit(lawyer_ids: [])
   end
 end
