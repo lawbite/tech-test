@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe CompanyLawyers do
   let(:company) { FactoryBot.create(:company) }
+  let(:company2) { FactoryBot.create(:company) }
   let(:lawyer1) { FactoryBot.create(:lawyer) }
   let(:lawyer2) { FactoryBot.create(:lawyer) }
   let(:lawyer3) { FactoryBot.create(:lawyer) }
