@@ -23,7 +23,7 @@ RSpec.describe CompanyLawyers do
     instance = described_class.new(company.id.to_s, [lawyer1.id.to_s, lawyer2.id.to_s, lawyer3.id.to_s])
     expect(instance.save).to be(false)
     # TODO: check which Product to confirm if this should read "Maximum number of lawyers exceeded"
-    expect(instance.errors).to eq(["Maximum number of lawyers reached"])
+    expect(instance.errors).to eq("Maximum number of lawyers reached")
   end
 
   it "can change the lawyers on a company" do

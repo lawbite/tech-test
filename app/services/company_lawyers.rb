@@ -11,6 +11,6 @@ class CompanyLawyers
   end
 
   def errors
-    company.errors.full_messages
+    company.errors.full_messages.join(", ")
   end
 end

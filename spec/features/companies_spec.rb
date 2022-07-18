@@ -77,5 +77,29 @@ RSpec.describe "Companies", type: :feature do
       expect(page).not_to have_content("Lawyer 1")
       expect(page).to have_content("Lawyer 2")
     end
+
+    it "display error when company is assigned too many lawyers" do
+      company = FactoryBot.create(
+        :company,
+        name: "Company 1",
+        lawyers: [
+          FactoryBot.create(:lawyer, name: "Lawyer 1"),
+          FactoryBot.create(:lawyer, name: "Lawyer 2")
+        ]
+      )
+      FactoryBot.create(:lawyer, name: "Lawyer 3")
+
+      visit company_path(company)
+
+      click_link "Manage Lawyers"
+      check "Lawyer 3"
+      click_button "Save"
+
+      expect(page).to have_field("Lawyer 3", checked: true)
+
+      within ".errors" do
+        expect(page).to have_content("Maximum number of lawyers reached")
+      end
+    end
   end
 end
