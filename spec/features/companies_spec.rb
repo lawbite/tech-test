@@ -25,5 +25,15 @@ RSpec.describe "Companies", type: :feature do
         expect(page).to have_content "Company 1"
       end
     end
+
+    it "shows the associated lawyers" do
+      company = FactoryBot.create(:company, :with_lawyer, name: "Company 1")
+
+      visit company_path(company)
+
+      within "li.associatedLawyer" do
+        expect(page).to have_content "Lawyer 1"
+      end
+    end
   end
 end

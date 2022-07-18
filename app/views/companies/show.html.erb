@@ -3,6 +3,8 @@
 <%= link_to "Manage Lawyers", "#" %>
 
 <h2>Company lawyers</h2>
-<ul>
-  <li>FIXME</li>
-</ul>
+<% company.lawyers.each do |lawyer| %>
+  <ul>
+    <li class="associatedLawyer"><%= lawyer.name %></li>
+  </ul>
+<% end %>
