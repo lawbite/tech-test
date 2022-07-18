@@ -7,9 +7,9 @@ class CompanyLawyersController < ApplicationController
   end
 
   def update
-    company = Company.find(params[:company_id])
-    company.update(company_params)
-    redirect_to company_path(company)
+    company_lawyers = CompanyLawyers.new(params[:company_id], params[:company][:lawyer_ids])
+    company_lawyers.save
+    redirect_to company_path(company_lawyers.company)
   end
 
   private
