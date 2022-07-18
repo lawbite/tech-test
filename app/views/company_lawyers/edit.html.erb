@@ -1,0 +1,8 @@
+<h1>Manager lawyers for <%= company.name %></h1>
+
+<%= form_with(company, url: company_lawyers_path(company_id: company.id)) do |f| %>
+  <%= f.collection_check_boxes(:lawyer_ids, Lawyer.all, :id, :name) do |lawyer| %>
+    <%= lawyer.label { lawyer.check_box + lawyer.text }  %>
+  <% end %>
+  <%= f.submit "Save" %>
+<% end %>
