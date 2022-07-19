@@ -1,8 +1,10 @@
 <h1><%= company.name %></h1>
 
-<%= link_to "Manage Lawyers", "#" %>
+<%= link_to "Manage Lawyers", edit_company_lawyers_path(company) %>
 
 <h2>Company lawyers</h2>
-<ul>
-  <li>FIXME</li>
-</ul>
+<% company.lawyers.each do |lawyer| %>
+  <ul>
+    <li class="associatedLawyer"><%= lawyer.name %></li>
+  </ul>
+<% end %>

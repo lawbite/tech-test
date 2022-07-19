@@ -1,0 +1,14 @@
+<h1>Manager lawyers for <%= company.name %></h1>
+
+<% if local_assigns[:errors] %>
+  <div class="errors">
+    <%= errors %>
+  </div>
+<% end %>
+
+<%= form_with(model: company, url: company_lawyers_path(company_id: company.id)) do |f| %>
+  <%= f.collection_check_boxes(:lawyer_ids, Lawyer.can_be_associated_with(company), :id, :name) do |lawyer| %>
+    <%= lawyer.label { lawyer.check_box + lawyer.text }  %>
+  <% end %>
+  <%= f.submit "Save" %>
+<% end %>

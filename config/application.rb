@@ -33,5 +33,8 @@ module TechTest
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # This allow customisation of the message format
+    config.active_model.i18n_customize_full_message = true
   end
 end

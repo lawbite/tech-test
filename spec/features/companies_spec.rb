@@ -25,5 +25,81 @@ RSpec.describe "Companies", type: :feature do
         expect(page).to have_content "Company 1"
       end
     end
+
+    it "shows the associated lawyers" do
+      company = FactoryBot.create(:company, :with_lawyer, name: "Company 1")
+
+      visit company_path(company)
+
+      within "li.associatedLawyer" do
+        expect(page).to have_content "Lawyer 1"
+      end
+    end
+  end
+
+  describe "lawyer association for the company" do
+    it "allow lawyers to be associated with the company" do
+      FactoryBot.create(
+        :lawyer,
+        name: "Lawyer 1",
+        email: "lawyer_1@example.com",
+      )
+      company = FactoryBot.create(:company, name: "Company 1")
+
+      visit company_path(company)
+
+      click_link "Manage Lawyers"
+      check "Lawyer 1"
+      click_button "Save"
+
+      within "li.associatedLawyer" do
+        expect(page).to have_content "Lawyer 1"
+      end
+    end
+
+    it "only shows lawyers who are not yet associated with a company or already assocaite with this company" do
+      FactoryBot.create(
+        :lawyer,
+        name: "Lawyer 1",
+        email: "lawyer_1@example.com",
+        company: FactoryBot.create(:company, name: "Company 1"),
+      )
+      FactoryBot.create(
+        :lawyer,
+        name: "Lawyer 2",
+        email: "lawyer_2@example.com",
+      )
+      company2 = FactoryBot.create(:company, name: "Company 2")
+
+      visit company_path(company2)
+
+      click_link "Manage Lawyers"
+      expect(page).not_to have_content("Lawyer 1")
+      expect(page).to have_content("Lawyer 2")
+    end
+
+    it "display error when company is assigned too many lawyers" do
+      company = FactoryBot.create(
+        :company,
+        name: "Company 1",
+        lawyers: [
+          FactoryBot.create(:lawyer, name: "Lawyer 1"),
+          FactoryBot.create(:lawyer, name: "Lawyer 2")
+        ]
+      )
+      FactoryBot.create(:lawyer, name: "Lawyer 3")
+
+      visit company_path(company)
+
+      click_link "Manage Lawyers"
+      check "Lawyer 3"
+      click_button "Save"
+
+      expect(page).to have_field("Lawyer 3", checked: true)
+
+      within ".errors" do
+        expect(page).to have_content("Maximum number of lawyers reached")
+      end
+    end
   end
 end
